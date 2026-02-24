@@ -1,0 +1,14 @@
+{
+  "name": "simple-board",
+  "version": "1.0.0",
+  "description": "간단한 HTML/CSS/JS 게시판 (Node.js 서버에 로컬 저장)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
