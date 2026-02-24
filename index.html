@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>간단한 게시판</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>간단한 게시판</h1>
+
+    <section class="write-section" id="writeSection" hidden>
+      <h2>새 글 작성</h2>
+      <form id="postForm">
+        <div class="form-row">
+          <label for="title">제목</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-row">
+          <label for="author">작성자</label>
+          <input type="text" id="author" name="author" required>
+        </div>
+        <div class="form-row">
+          <label for="password">비밀번호 (수정/삭제용)</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-row">
+          <label for="content">내용</label>
+          <textarea id="content" name="content" rows="5" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit">글올리기</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="list-section" id="listSection">
+      <h2>게시글 목록</h2>
+      <div class="list-actions">
+        <button type="button" id="showWriteButton">글작성</button>
+      </div>
+      <table class="post-table">
+        <thead>
+          <tr>
+            <th style="width: 60px;">번호</th>
+            <th>제목</th>
+            <th style="width: 120px;">작성자</th>
+            <th style="width: 160px;">작성일</th>
+          </tr>
+        </thead>
+        <tbody id="postList">
+          <!-- 게시글 목록이 JavaScript로 채워집니다 -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="detail-section" id="detailSection" hidden>
+      <h2>게시글 보기</h2>
+      <div class="detail-header">
+        <div class="detail-title" id="detailTitle"></div>
+        <div class="detail-meta">
+          <span id="detailAuthor"></span>
+          <span id="detailDate"></span>
+        </div>
+      </div>
+      <div class="detail-content" id="detailContent"></div>
+      <div class="detail-actions">
+        <button type="button" id="detailEditButton">수정</button>
+        <button type="button" id="detailDeleteButton">삭제</button>
+        <button type="button" id="backToListButton">게시글 목록</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+
