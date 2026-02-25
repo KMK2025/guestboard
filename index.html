@@ -2,54 +2,58 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>간단한 게시판</title>
+  <title>게시판</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>간단한 게시판</h1>
+    <h1>게시판</h1>
 
-    <!-- 글 작성 -->
-    <section class="write-section">
-      <h2>게시글 작성</h2>
-      <form id="postForm">
-        <div class="form-row">
-          <label>제목</label>
-          <input type="text" id="title" />
-        </div>
-
-        <div class="form-row">
-          <label>작성자</label>
-          <input type="text" id="author" />
-        </div>
-
-        <div class="form-row">
-          <label>내용</label>
-          <textarea id="content" rows="4"></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button type="submit">글게시</button>
-        </div>
-      </form>
-    </section>
-
-    <!-- 목록 -->
-    <section class="list-section">
-      <h2>게시글 목록</h2>
+    <!-- 목록 화면 -->
+    <section id="listSection">
       <table class="post-table">
         <thead>
           <tr>
             <th>번호</th>
-            <th>제목 / 내용</th>
-            <th>작성자</th>
+            <th>제목</th>
             <th>작성일</th>
-            <th>관리</th>
           </tr>
         </thead>
-        <tbody id="postTableBody">
-        </tbody>
+        <tbody id="postTableBody"></tbody>
       </table>
+
+      <div class="list-actions">
+        <button onclick="showWrite()">글작성</button>
+      </div>
+    </section>
+
+    <!-- 작성 / 상세 화면 -->
+    <section id="writeSection" style="display:none;">
+      <div class="form-row">
+        <label>제목</label>
+        <input type="text" id="title" />
+      </div>
+
+      <div class="form-row">
+        <label>작성자</label>
+        <input type="text" id="author" />
+      </div>
+
+      <div class="form-row">
+        <label>비밀번호</label>
+        <input type="password" id="password" />
+      </div>
+
+      <div class="form-row">
+        <label>내용</label>
+        <textarea id="content" rows="6"></textarea>
+      </div>
+
+      <div class="detail-actions">
+        <button onclick="goList()">목록</button>
+        <button onclick="savePost()">저장</button>
+        <button onclick="deletePost()">삭제</button>
+      </div>
     </section>
   </div>
 
