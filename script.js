@@ -302,6 +302,15 @@ function setupEvents() {
     });
   }
 
+  const firebaseConfig = {
+  apiKey: "...",
+  authDomain: "...",
+  projectId: "...",
+  storageBucket: "...",
+  messagingSenderId: "...",
+  appId: "..."
+};
+
   const tbody = document.getElementById('postList');
   if (tbody) {
     tbody.addEventListener('click', (event) => {
@@ -321,3 +330,4 @@ window.addEventListener('DOMContentLoaded', () => {
   setupEvents();
   loadPosts();
 });
+
