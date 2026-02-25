@@ -5,6 +5,26 @@
   <title>간단한 게시판</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<script type="module">
+  import { initializeApp } from 
+    "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore } from 
+    "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "여기에_복사한_apiKey",
+    authDomain: "여기에_authDomain",
+    projectId: "여기에_projectId",
+    storageBucket: "여기에_storageBucket",
+    messagingSenderId: "여기에_senderId",
+    appId: "여기에_appId"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  window.db = db; 
+</script>
 <body>
   <div class="container">
     <h1>간단한 게시판</h1>
@@ -75,4 +95,5 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+
 
